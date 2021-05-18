@@ -51,11 +51,11 @@ jobs:
       - name: extract build
         run: tar -xzvf build.tar.gz
 
-      - name: Deploying to Netlify @ https://NETLIFY URL HERE
+      - name: Deploying to Netlify @ https://practical-jackson-16f8c7.netlify.app/
         if: github.ref == 'refs/heads/main'
         uses: South-Paw/action-netlify-deploy@v1.2.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.AUTH_TOKEN }}
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
           build-dir: './build'
